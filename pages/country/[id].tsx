@@ -1,5 +1,5 @@
+import {Layout} from '@/components/common';
 import React from 'react';
-import {Layout} from '../../components/layout/Layout';
 
 const CountryPage = () => {
   return (

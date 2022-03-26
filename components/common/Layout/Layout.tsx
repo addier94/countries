@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import React, {FC} from 'react';
-import {Nav} from '../nav/Nav';
+import Nav from '../Nav/Nav';
 
-export const Layout:FC = ({children}) => {
+const Layout:FC = ({children}) => {
   return (
     <>
       <Head>
@@ -15,3 +15,4 @@ export const Layout:FC = ({children}) => {
     </>
   );
 };
+export default Layout;

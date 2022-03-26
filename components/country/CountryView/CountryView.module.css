@@ -1,0 +1,6 @@
+.root {
+  @apply p-4;
+  background-color: black;
+  min-height: calc(100vh - 51.97px);
+}
+

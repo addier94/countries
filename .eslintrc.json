@@ -21,8 +21,9 @@
         "@typescript-eslint"
     ],
     "rules": {
-      "react/react-in-jsx-scope": "off",
-      "no-unused-vars": "warn",
-      "max-len": "off"
+        "react/react-in-jsx-scope": "off",
+        "no-unused-vars": "warn",
+        "max-len": "off",
+        "react/prop-types": "off"
     }
 }

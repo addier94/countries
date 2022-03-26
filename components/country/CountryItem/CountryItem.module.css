@@ -1,9 +1,3 @@
-.root {
-  @apply p-4;
-  background-color: black;
-  min-height: calc(100vh - 51.97px);
-}
-
 .block{
   background-color: #111111;
   color:white;
@@ -12,7 +6,7 @@
   @apply rounded-lg overflow-hidden;
 }
 .image_wrapper{
-  @apply relative;
+  @apply relative cursor-pointer;
   padding-bottom: 56.25%;
 }
 @screen sm {
@@ -34,4 +28,8 @@
   .block {
     width: calc(20% - 2 * .75rem)
   }
+}
+
+.des_text{
+  @apply font-bold mr-1 text-gray-400;
 }

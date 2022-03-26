@@ -1,3 +1,11 @@
+export interface optimizedCountries {
+  id: number
+  flag?: string
+  name:string
+  region: Region
+  population: number
+  lang: { [key: string]: string } | null
+}
 export interface Countries {
   name: Name;
   tld?: string[];

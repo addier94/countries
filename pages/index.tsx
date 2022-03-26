@@ -2,14 +2,13 @@ import {Layout} from '@/components/common';
 import {CountryView} from '@/components/country';
 import type {GetStaticProps, NextPage} from 'next';
 import {countryApi} from '@/api/index';
+import {Countries, optimizedCountries} from '@/interfaces/all-countries';
 interface Props {
-  namei: {fuck: number}
+  countries: optimizedCountries[]
 }
 
 
-const Home: NextPage<Props> = ({namei}) => {
-  console.log('props ', namei);
-
+const Home: NextPage<Props> = ({countries}) => {
   return (
     <Layout>
       <CountryView />
@@ -20,10 +19,21 @@ const Home: NextPage<Props> = ({namei}) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-  countryApi;
+  const data = await countryApi.get<Countries[]>('/all');
+
+  const countries:optimizedCountries[] = data.data.map((country, i) => ({
+    id: i + 1,
+    flag: country.flags.svg,
+    name: country.name.common,
+    region: country.region,
+    population: country.population,
+    lang: country.languages || null,
+  }));
+
+
   return {
     props: {
-      namei: 'fuck',
+      countries,
     },
   };
 };

@@ -1,4 +1,4 @@
-export const readableNumber = (num:number) => {
+const readableNumber = (num:number):string => {
   // turn number to array
   const numArray = Array.from(String(num));
 
@@ -17,9 +17,9 @@ export const readableNumber = (num:number) => {
   return formattedNumber.reverse().join('');
 };
 
-type ObjParams = { [key: string]: string } | undefined;
-
-export const objToString = (obj:ObjParams) => {
+// return obj as string only value separate by ,
+type ObjParams = { [key: string]: string } | null;
+const objToString = (obj:ObjParams):string => {
   if (!obj) return '';
 
   const langs:string[] = [];
@@ -29,4 +29,24 @@ export const objToString = (obj:ObjParams) => {
   }
 
   return langs.join(', ');
+};
+
+const getCurrencies = (obj:any):string => {
+  // get first property of object for using as key
+  const property:string = Object.keys(obj)[0];
+
+  return obj[property].name;
+};
+
+const makeSlug = (text:string):string => {
+  return text
+      .toLowerCase()
+      .replace(/ /g, '-')
+      .replace(/[^\w-]+/g, '');
+};
+export default {
+  readableNumber,
+  objToString,
+  getCurrencies,
+  makeSlug,
 };

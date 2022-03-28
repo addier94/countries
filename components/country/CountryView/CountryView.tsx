@@ -1,29 +1,19 @@
-import {Countries} from '@/interfaces/all-countries';
-import {localdata} from 'localdata';
-import React, {useEffect, useState} from 'react';
-import s from './CountryView.module.css';
+import {optimizedCountries} from '@/interfaces/all-countries';
+import React, {FC} from 'react';
 import CountryItem from '../CountryItem/CountryItem';
 
-const CountryView = () => {
-  const [countries, setCountries] = useState<Countries[]>();
+interface Props {
+  countries: optimizedCountries[]
+}
 
-  const getAllCountries = () => {
-    const data = localdata as Countries[];
-    setCountries(data);
-  };
-
-  useEffect(() => {
-    getAllCountries();
-  }, []);
+const CountryView:FC<Props> = ({countries}) => {
   return (
-    <article className={s.root}>
-      <section className='flex flex-wrap'>
-        {countries && countries.map((item) => (
-          <CountryItem key={item.name.official} country={item} />
-        ))
-        };
-      </section>
-    </article>
+    <section className='flex flex-wrap'>
+      {countries && countries.map((item) => (
+        <CountryItem key={item.id} country={item} />
+      ))
+      };
+    </section>
   );
 };
 

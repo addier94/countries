@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import React, {FC} from 'react';
 import Nav from '../Nav/Nav';
+import s from './Layout.module.css';
 
 const Layout:FC = ({children}) => {
   return (
@@ -11,7 +12,7 @@ const Layout:FC = ({children}) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
-      <div>{children}</div>
+      <main className={s.root}>{children}</main>
     </>
   );
 };

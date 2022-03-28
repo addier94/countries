@@ -1,0 +1,25 @@
+.imgwrapper{
+  @apply rounded-lg mx-2 relative bg-primary p-6 flex justify-between items-center;
+}
+.info_wrapper{
+  @apply  rounded-lg mx-2 bg-primary px-4 py-3 mt-6;
+}
+.info_wrapper h1 {
+  @apply text-3xl leading-8  font-bold;
+}
+.info{
+  @apply mt-4;
+}
+@screen sm{
+  .info{
+    @apply mt-6 grid grid-cols-2;
+  }
+}
+@screen md {
+  .info{
+    @apply mt-8 grid grid-cols-3 gap-x-4 text-lg;
+  }
+}
+.subject {
+  @apply text-gray-400 mr-1;
+}

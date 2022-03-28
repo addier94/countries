@@ -11,7 +11,7 @@ interface Props {
 const Home: NextPage<Props> = ({countries}) => {
   return (
     <Layout>
-      <CountryView />
+      <CountryView countries={countries}/>
     </Layout>
   );
 };

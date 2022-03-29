@@ -1,12 +1,13 @@
-import {optimizedCountries} from '@/interfaces/all-countries';
+import {Countries} from '@/interfaces/all-countries';
 import React, {FC} from 'react';
 import CountryItem from '../CountryItem/CountryItem';
 
 interface Props {
-  countries: optimizedCountries[]
+  countries: Countries[]
 }
 
 const CountryView:FC<Props> = ({countries}) => {
+  console.log(countries);
   return (
     <section className='flex flex-wrap'>
       {countries && countries.map((item) => (

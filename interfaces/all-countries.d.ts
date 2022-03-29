@@ -7,6 +7,7 @@ export interface optimizedCountries {
   lang: { [key: string]: string } | null
 }
 export interface Countries {
+  id: number;
   name: Name;
   tld?: string[];
   cca2: string;

@@ -18,7 +18,7 @@ const readableNumber = (num:number):string => {
 };
 
 // return obj as string only value separate by ,
-type ObjParams = { [key: string]: string } | null;
+type ObjParams = { [key: string]: string } | undefined;
 const objToString = (obj:ObjParams):string => {
   if (!obj) return '';
 

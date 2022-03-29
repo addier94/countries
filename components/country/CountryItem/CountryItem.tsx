@@ -12,13 +12,15 @@ interface Props {
 const CountryItem:FC<Props> = ({country}) => {
   return (
     <div className={s.block}>
-      <Link href={`country/${showString.makeSlug(country.name.common)}`}>
+      <Link href={`country/${showString.makeSlug(country.name.official)}`}>
         <div className={s.image_wrapper}>
           <Image
             src={country.flags.svg || '/images/no-image.svg'}
             objectFit="cover"
             layout="fill"
             alt={country.name.official}
+            blurDataURL='/images/loading.gif'
+            placeholder='blur'
           />
         </div>
       </Link>

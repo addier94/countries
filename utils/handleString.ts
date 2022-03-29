@@ -1,3 +1,5 @@
+import {Currencies} from '@/interfaces/all-countries';
+
 const readableNumber = (num:number):string => {
   // turn number to array
   const numArray = Array.from(String(num));
@@ -31,7 +33,9 @@ const objToString = (obj:ObjParams):string => {
   return langs.join(', ');
 };
 
-const getCurrencies = (obj:any):string => {
+const getCurrencies = (obj:any | undefined) => {
+  if (!obj) return;
+
   // get first property of object for using as key
   const property:string = Object.keys(obj)[0];
 

@@ -1,8 +1,8 @@
 import {Layout} from '@/components/common';
-import {CountryView} from '@/components/country';
+import {CountriesView} from '@/components/country';
 import type {GetStaticProps, NextPage} from 'next';
 import {countryApi} from '@/api/index';
-import {Countries, optimizedCountries} from '@/interfaces/all-countries';
+import {Countries} from '@/interfaces/all-countries';
 interface Props {
   countries: Countries[]
 }
@@ -11,7 +11,9 @@ interface Props {
 const Home: NextPage<Props> = ({countries}) => {
   return (
     <Layout>
-      <CountryView countries={countries}/>
+      {countries.length > 0 &&
+      <CountriesView countries={countries}/>
+      }
     </Layout>
   );
 };

@@ -61,7 +61,7 @@ const CountryView:FC<{country: Countries}> = ({country}) => {
             {country.postalCode?.format ? country.postalCode.format : '#####'}
           </p>
           <p><span className={s.subject}>Ubication: </span>
-            <a className='text-blue-700 underline' target="_blank" href={country.maps.googleMaps} rel="noreferrer">See Address</a>
+            <a className='text-blue-700 underline' target="_blank" href={country.maps.googleMaps} rel="noreferrer">Open Ubication</a>
           </p>
         </article>
       </section>

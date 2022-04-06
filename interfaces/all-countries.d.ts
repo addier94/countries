@@ -1,11 +1,4 @@
-export interface optimizedCountries {
-  id: number
-  flag?: string
-  name:string
-  region: Region
-  population: number
-  lang: { [key: string]: string } | null
-}
+export type RegionAllowed = 'Americas' | 'Africa' | 'Oceania' | 'Asia' | 'Antarctic' | 'Europe' | ''
 export interface Countries {
   id: number;
   name: Name;

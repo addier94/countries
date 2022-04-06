@@ -3,9 +3,13 @@ import {createContext} from 'react';
 
 interface ContextProps {
   countries: Countries[];
+  countriesListByName:Countries[]
+  countriesFilteredByRegion: Countries[]
 
   // methods
-  setCountries: (countries: Countries[]) => void
+  setAllCountries: (countries: Countries[]) => void
+  searchByName: (name:string) => void
+  filterByRegion: (regionSelected:string) => void
 }
 
 export const CountriesContext = createContext({} as ContextProps);

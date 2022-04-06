@@ -1,0 +1,20 @@
+.wrapRegion{
+  @apply relative;
+}
+.wrapRegion:hover > .regionR{
+  @apply block;
+}
+
+.regionR {
+  @apply absolute w-32 right-0 top-7 rounded-md bg-primary py-2 hidden;
+}
+
+.regionR li:hover {
+  @apply bg-gray-700;
+}
+.regionR button {
+  @apply w-full py-1 px-5 text-left;
+}
+.regionR button:hover {
+  @apply bg-gray-700;
+}

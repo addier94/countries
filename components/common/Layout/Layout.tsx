@@ -12,7 +12,17 @@ const Layout:FC = ({children}) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
+
       <main className={s.root}>{children}</main>
+
+      <footer className='font-light bg-gray-900'>
+        <p className='text-center px-2 py-4 text-gray-500'>
+          Copyright © {(new Date).getFullYear()}
+          <a href='https://fernandezalfredo.com/'
+            className='text-gray-200 ml-1 duration-150 hover:text-blue-700'
+            target="_blank" rel="noreferrer">fernandezalfredo.com</a>
+        </p>
+      </footer>
     </>
   );
 };

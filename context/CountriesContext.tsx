@@ -5,6 +5,7 @@ interface ContextProps {
   countries: Countries[];
   countriesListByName:Countries[]
   countriesFilteredByRegion: Countries[]
+  valueToFilterByRegion: string
 
   // methods
   setAllCountries: (countries: Countries[]) => void

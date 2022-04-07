@@ -7,13 +7,13 @@ export interface CountriesState {
   countries: Countries[]
   countriesListByName:Countries[]
   countriesFilteredByRegion: Countries[]
-  filterByRegion: string
+  valueToFilterByRegion: string
 }
 const COUNTRIES_INITIAL_STATE: CountriesState = {
   countries: [],
   countriesListByName: [],
   countriesFilteredByRegion: [],
-  filterByRegion: '',
+  valueToFilterByRegion: '',
 };
 
 export const CountriesProvider:FC = ({children}) => {

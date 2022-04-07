@@ -17,7 +17,7 @@ export const countriesReducer = (state: CountriesState, action: CountriesActionT
 
     case '[Countries] - List By Name': {
       let countriesFiltered;
-      if (state.filterByRegion !== '') {
+      if (state.valueToFilterByRegion !== '') {
         countriesFiltered = state.countriesFilteredByRegion;
       } else {
         countriesFiltered = state.countries;
@@ -37,7 +37,7 @@ export const countriesReducer = (state: CountriesState, action: CountriesActionT
       const {regionSelected} = action.payload;
 
       if (regionSelected === '') {
-        return {...state, countriesFilteredByRegion: [], filterByRegion: ''};
+        return {...state, countriesFilteredByRegion: [], valueToFilterByRegion: ''};
       }
 
       const countriesFilteredByRegion = state.countries.filter((country) => {
@@ -47,7 +47,7 @@ export const countriesReducer = (state: CountriesState, action: CountriesActionT
       return {
         ...state,
         countriesFilteredByRegion,
-        filterByRegion: regionSelected,
+        valueToFilterByRegion: regionSelected,
       };
     }
 

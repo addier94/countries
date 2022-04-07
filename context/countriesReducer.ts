@@ -30,6 +30,7 @@ export const countriesReducer = (state: CountriesState, action: CountriesActionT
       return {
         ...state,
         countriesListByName,
+        searching: action.payload,
       };
     }
 

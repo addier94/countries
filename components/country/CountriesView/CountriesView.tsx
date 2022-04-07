@@ -3,10 +3,14 @@ import CountryItem from '../CountryItem/CountryItem';
 import {CountriesContext} from '../../../context/CountriesContext';
 
 const CountriesView = () => {
-  const {countries, countriesListByName, countriesFilteredByRegion} = useContext(CountriesContext);
+  const {countries, countriesListByName, countriesFilteredByRegion, searching} = useContext(CountriesContext);
+
+  // if (countriesListByName?.length && searching) {
+  //   console.log('search ', Math.random() * 100);
+  // }
 
   const countriesList = () => {
-    if (countriesListByName?.length > 0 && countriesListByName?.length !== countries?.length) {
+    if (countriesListByName?.length > 0 && searching) {
       return countriesListByName;
     }
     if (countriesFilteredByRegion?.length > 0) {

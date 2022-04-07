@@ -8,12 +8,14 @@ export interface CountriesState {
   countriesListByName:Countries[]
   countriesFilteredByRegion: Countries[]
   valueToFilterByRegion: string
+  searching: string
 }
 const COUNTRIES_INITIAL_STATE: CountriesState = {
   countries: [],
   countriesListByName: [],
   countriesFilteredByRegion: [],
   valueToFilterByRegion: '',
+  searching: '',
 };
 
 export const CountriesProvider:FC = ({children}) => {

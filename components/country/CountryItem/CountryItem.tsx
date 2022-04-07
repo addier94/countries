@@ -1,15 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import {FC} from 'react';
+import {FC, useContext} from 'react';
 import s from './CountryItem.module.css';
 import {showString} from '@/utils/index';
 import {Countries} from '@/interfaces/all-countries';
+import {CountriesContext} from '../../../context/CountriesContext';
 
 interface Props {
   country: Countries
 }
 
 const CountryItem:FC<Props> = ({country}) => {
+  const {filterByRegion} = useContext(CountriesContext);
   return (
     <div className={s.block}>
       <Link href={`country/${showString.makeSlug(country.name.official)}`}>
@@ -28,10 +30,11 @@ const CountryItem:FC<Props> = ({country}) => {
         <h1 className='leading-4'>
           <span className={s.des_text}>Name:</span>
           {country.name.common}
-          <a href="#"
+          <button
+            onClick={() => filterByRegion(country.region)}
             className="bg-blue-100 hover:bg-blue-200 text-blue-800 text-xs font-semibold ml-1 px-1 rounded">
             {country.region}
-          </a>
+          </button>
         </h1>
         <h3>
           <span className={s.des_text}>Population:</span>

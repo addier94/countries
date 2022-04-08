@@ -12,7 +12,7 @@ interface Props {
 
 const CountryPage:FC<Props> = ({country}) => {
   return (
-    <Layout>
+    <Layout tittle={country.name.common}>
       {country &&
       <CountryView country={country} />
       }

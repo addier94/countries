@@ -18,7 +18,7 @@ const Home: NextPage<Props> = ({allCountries}) => {
   }, []);
 
   return (
-    <Layout>
+    <Layout tittle="All countries of the world">
       <CountriesView />
     </Layout>
   );
